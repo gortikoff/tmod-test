@@ -1,0 +1,3 @@
+displayName = BogdanchikMod
+author = KorkutBey
+version = 0.1

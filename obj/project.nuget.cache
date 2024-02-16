@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ePWv4HQd+3ZyRdOAWjj7WwJIa3+rUHyg+KnldpaDW9oDBek8aUMXoRI5GUnTJgl1hRLIl9OIEqLyIt7WrImy+w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gortikov\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BogdanMod\\BogdanMod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gortikov\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
