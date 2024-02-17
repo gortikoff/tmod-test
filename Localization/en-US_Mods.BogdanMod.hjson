@@ -5,4 +5,9 @@ Items: {
 		DisplayName: Sword Of Korkut Bey
 		Tooltip: I love poop!
 	}
+
+	SimpleHeart: {
+		DisplayName: Simple Heart
+		Tooltip: ""
+	}
 }
