@@ -1,13 +1,18 @@
 # This file will automatically update with entries for new content after a build and reload
 
 Items: {
-	SwordOfKorkutBey: {
-		DisplayName: Sword Of Korkut Bey
-		Tooltip: I love poop!
-	}
-
 	SimpleHeart: {
 		DisplayName: Simple Heart
-		Tooltip: ""
+		Tooltip: Perfect little heart
+	}
+
+	SimpleHeartSecond: {
+		DisplayName: Simple Heart Second
+		Tooltip: Brother of Simple Heart
+	}
+
+	Zulfikar: {
+		DisplayName: Zulfikar
+		Tooltip: Sword of the Muhhamad Messenger
 	}
 }
