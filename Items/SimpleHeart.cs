@@ -12,12 +12,12 @@ namespace BogdanMod.Items
 		{
 			Item.damage = 5;
 			Item.DamageType = DamageClass.Melee;
-			Item.width = 9;
-			Item.height = 9;
-			Item.useTime = 20;
-			Item.useAnimation = 20;
+			Item.width = 18;
+			Item.height = 18;
+			Item.useTime = 1;
+			Item.useAnimation = 30;
 			Item.useStyle = 1;
-			Item.knockBack = 600;
+			Item.knockBack = 2;
 			Item.value = 10000;
 			Item.rare = 2;
 			Item.UseSound = SoundID.Item1;
