@@ -14,14 +14,16 @@ namespace BogdanMod.Items.Swords
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 32;
 			Item.height = 32;
-			Item.useTime = 1;
-			Item.useAnimation = 30;
-			Item.useStyle = 1;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 10;
 			Item.value = 10000;
-			Item.rare = 5;
+			Item.rare = ItemRarityID.Lime;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
+			Item.useTurn = true;
+			Item.scale = 1f;
 		}
 
 		public override void AddRecipes()
