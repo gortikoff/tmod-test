@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
+using BogdanMod.Items.Swords;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Biomes.CaveHouse;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -20,85 +24,116 @@ namespace BogdanMod.NPCs.Enemies
         {
           NPC.townNPC = true;
           NPC.friendly = true;
-          NPC.width = 14;
-          NPC.height = 22;
+          NPC.width = 22;
+          NPC.height = 46;
           NPC.aiStyle = 7;
           NPC.defense = 20;
           NPC.lifeMax = 300;
           NPC.HitSound = SoundID.NPCHit1;
           NPC.DeathSound = SoundID.NPCDeath1;
           NPC.knockBackResist = 0.5f;
-          Main.npcFrameCount[NPC.type] = 7;
+          Main.npcFrameCount[NPC.type] = 25;
           NPCID.Sets.ExtraFramesCount[NPC.type] = 0;
           NPCID.Sets.AttackFrameCount[NPC.type] = 0;
-          NPCID.Sets.DangerDetectRange[NPC.type] = 500;
-          NPCID.Sets.AttackType[NPC.type] = 1;
+          NPCID.Sets.DangerDetectRange[NPC.type] = -1;
+          NPCID.Sets.AttackType[NPC.type] = 3;
           NPCID.Sets.AttackTime[NPC.type] = 30;
           NPCID.Sets.AttackAverageChance[NPC.type] = 10;
           NPCID.Sets.HatOffsetY[NPC.type] = 4;
-          AnimationType = 10;
-        }
-    /*    public override bool CanTownNPCSpawn(int numTownNPCs, int money)
-        {
-            for (var i = 0; i < 255; i++)
-            {
-                Player player = Main.player[i];
-                foreach (Item item in player.inventory)
-                {
-                    if (item.type == ItemID.WoodenArrow)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+          AnimationType = 22;
         }
 
-        public override List<string> SetNPCNameList()
+        public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)
         {
-            return new List<string>()
-            {
-                "Orion",
-                "Apollo",
-                "Robin"
-            };
+          //  item.Name=;
+            // itemFrame = null;
+            itemSize = 10;
+            scale = 10;
+         //   offset = Vector2.UnitX;
+
+
+            
+            
+            base.DrawTownAttackSwing(ref item, ref itemFrame, ref itemSize, ref scale, ref offset);
         }
+        /*    public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+            {
+                for (var i = 0; i < 255; i++)
+                {
+                    Player player = Main.player[i];
+                    foreach (Item item in player.inventory)
+                    {
+                        if (item.type == ItemID.WoodenArrow)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            public override List<string> SetNPCNameList()
+            {
+                return new List<string>()
+                {
+                    "Orion",
+                    "Apollo",
+                    "Robin"
+                };
+            }
+
+            public override void SetChatButtons(ref string button, ref string button2)
+            {
+                button = "Shop";
+                button2 = "This is the second button";
+            }
+
+            public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+            {
+                if (firstButton)
+                {
+                    shop = true;
+                }
+            }
+
+            public override void SetupShop(Chest shop, ref int nextSlot)
+            {
+                //Wooden Arrow
+                shop.item[nextSlot].SetDefaults(ItemID.WoodenArrow, false);
+                shop.item[nextSlot].value = 1;
+                nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.WoodenBow, false);
+                nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.TinBow, false);
+                shop.item[nextSlot].value = 500;          
+                nextSlot++;
+
+                if (NPC.downedBoss1)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.PlatinumBow, false);
+                    nextSlot++;
+                }
+            }
+    */
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Shop";
-            button2 = "This is the second button";
+            button = "Pupochki";
+            button2 = "Zhmachechki";
         }
-
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string Pupochki)
         {
             if (firstButton)
             {
-                shop = true;
+                Pupochki = "Yaga's Shop";
             }
         }
-
-        public override void SetupShop(Chest shop, ref int nextSlot)
+        public override void AddShops()
         {
-            //Wooden Arrow
-            shop.item[nextSlot].SetDefaults(ItemID.WoodenArrow, false);
-            shop.item[nextSlot].value = 1;
-            nextSlot++;
-
-            shop.item[nextSlot].SetDefaults(ItemID.WoodenBow, false);
-            nextSlot++;
-
-            shop.item[nextSlot].SetDefaults(ItemID.TinBow, false);
-            shop.item[nextSlot].value = 500;          
-            nextSlot++;
-
-            if (NPC.downedBoss1)
-            {
-                shop.item[nextSlot].SetDefaults(ItemID.PlatinumBow, false);
-                nextSlot++;
-            }
+            //ItemID.Wood;
         }
-*/
         public override string GetChat()
         {
             NPC.FindFirstNPC(ModContent.NPCType<BabaYaga>());
@@ -115,9 +150,10 @@ namespace BogdanMod.NPCs.Enemies
             }
         }
 
+
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
-            damage = 15;
+            damage = 30;
             knockback = 2f;
         }
 
@@ -140,7 +176,7 @@ namespace BogdanMod.NPCs.Enemies
 
         public override void OnKill()
         {
-            Item.NewItem(NPC.GetSource_Death(), NPC.getRect(), ItemID.GoldBow, 1, false, 0, false, false);
+            Item.NewItem(NPC.GetSource_Death(), NPC.getRect(), ItemID.Wood, 1, false, 0, false, false);
         }
     }
 }
