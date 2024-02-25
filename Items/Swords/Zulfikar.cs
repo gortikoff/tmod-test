@@ -18,7 +18,7 @@ namespace BogdanMod.Items.Swords
 			Item.useAnimation = 35;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 10;
-			Item.value = 10000;
+			Item.value = 100000;
 			Item.rare = ItemRarityID.Lime;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
